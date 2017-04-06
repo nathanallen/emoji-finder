@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    .hidden {
+      display: none;
+    }
+    input {
+      font-size: 2em;
+      width: 10em;
+      cursor: pointer;
+    }
+
+    img {
+      width: 300px;
+      transition: width 1s ease;
+    }
+  </style>
+</head>
+<body>
+
+<input type="button" value="confused" onclick="search(this.value)">
+<input type="button" value="excited"  onclick="search(this.value)">
+<input type="button" value="happy"    onclick="search(this.value)">
+
+<p>Showing results for: "<span class="choice">ALL</span>"</p>
+<hr>
+
+<img class="scared excited" src="https://media.giphy.com/media/12qD5dcB0cDUOY/giphy.gif">
+<img class="confused" src="https://media.giphy.com/media/GXzJXQlfIZx9m/giphy.gif">
+<img class="confused" src="https://media.giphy.com/media/vam5SvHAP7Hvq/giphy.gif">
+<img class="excited" src="https://media.giphy.com/media/X2kWR0pHiOplm/giphy.gif">
+<img class="happy" src="https://media.giphy.com/media/eCGTfFtjcp928/giphy.gif">
+
+<hr>
+
+<script>
+  images = document.querySelectorAll("img")
+  choice = document.querySelector(".choice")
+  function search(tag){
+    choice.innerText = tag;
+    for(image of images){
+      isMatch = image.className.match(tag)
+      image.setAttribute("style", isMatch || "width:0")
+    }
+  }
+</script>
+
+</body>
+</html>

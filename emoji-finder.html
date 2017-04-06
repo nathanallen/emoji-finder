@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emoji Finder</title>
+  <style type="text/css">
+    .hidden {
+      display: none;
+    }
+    input {
+      font-size: 2em;
+      cursor: pointer;
+    }
+
+    icon {
+      display: inline;
+      font-size: 5em;
+      transition: display 3s ease;
+    }
+  </style>
+</head>
+<body>
+
+<input type="button" value="all" onclick="search('')">
+<input type="button" value="confused" onclick="search(this.value)">
+<input type="button" value="surprised" onclick="search(this.value)">
+<input type="button" value="excited"  onclick="search(this.value)">
+<input type="button" value="happy"    onclick="search(this.value)">
+<input type="button" value="sad"    onclick="search(this.value)">
+
+<p>Showing results for: "<span class="choice"></span>"</p>
+<hr>
+
+<icon class="happy">😀</icon>
+<icon class="happy">😃</icon>
+<icon class="happy">😄</icon>
+<icon class="happy excited">😆</icon>
+<icon class="happy excited">😂</icon>
+<icon class="happy">😊</icon>
+<icon class="happy">😇</icon>
+<icon class="happy">😌</icon>
+<icon class="happy excited">😍</icon>
+<icon class="happy">😗</icon>
+<icon class="happy">😙</icon>
+<icon class="happy">😚</icon>
+<icon class="happy">😋</icon>
+<icon class="confused">😜</icon>
+<icon class="confused">😝</icon>
+<icon class="confused">😛</icon>
+<icon class="sad">😒</icon>
+<icon class="sad">😞</icon>
+<icon class="sad">😔</icon>
+<icon class="sad">😟</icon>
+<icon class="sad">😕</icon>
+<icon class="confused">😖</icon>
+<icon class="sad">😫</icon>
+<icon class="sad">😩</icon>
+<icon class="sad">😤</icon>
+<icon class="sad">😠</icon>
+<icon class="sad">😡</icon>
+<icon class="confused">😶</icon>
+<icon class="confused">😐</icon>
+<icon class="confused">😑</icon>
+<icon class="surprised">😯</icon>
+<icon class="surprised">😦</icon>
+<icon class="surprised">😧</icon>
+<icon class="surprised">😮</icon>
+<icon class="surprised confused">😲</icon>
+<icon class="surprised confused">😵</icon>
+<icon class="surpised confused">😳</icon>
+<icon class="surpised confused">😱</icon>
+<icon class="sad surprised confused">😨</icon>
+<icon class="sad confused">😰</icon>
+<icon class="sad confused">😢</icon>
+<icon class="sad confused">😥</icon>
+<hr>
+
+<center>Made by Nathan Allen</center>
+
+<script>
+  images = document.querySelectorAll("icon")
+  choice = document.querySelector(".choice")
+  function search(tag){
+    choice.innerText = tag;
+    for(image of images){
+      isMatch = image.className.match(tag)
+      image.setAttribute("style", isMatch || "display:none")
+    }
+  }
+</script>
+
+</body>
+</html>
