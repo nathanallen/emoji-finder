@@ -13,15 +13,11 @@
     }
 
     select {
-      display: inline;
       font-size: 24px;
     }
 
-    icon {
-      display: inline;
+    span {
       font-size: 96px;
-      transition: display 3s ease;
-      text-align: center;
     }
   </style>
 </head>
@@ -40,59 +36,59 @@ Find me emoji that are...
 
 <hr>
 
-<icon class="happy">😀</icon>
-<icon class="happy excited">😃</icon>
-<icon class="happy excited">😄</icon>
-<icon class="happy excited">😆</icon>
-<icon class="happy excited">😂</icon>
-<icon class="happy">😊</icon>
-<icon class="happy">😇</icon>
-<icon class="happy">😌</icon>
-<icon class="happy excited">😍</icon>
-<icon class="happy">😗</icon>
-<icon class="happy">😙</icon>
-<icon class="happy">😚</icon>
-<icon class="happy excited">😋</icon>
-<icon class="confused excited">😜</icon>
-<icon class="confused excited">😝</icon>
-<icon class="confused excited">😛</icon>
-<icon class="sad">😒</icon>
-<icon class="sad">😞</icon>
-<icon class="sad">😔</icon>
-<icon class="sad">😟</icon>
-<icon class="sad">😕</icon>
-<icon class="confused">😖</icon>
-<icon class="sad">😫</icon>
-<icon class="sad">😩</icon>
-<icon class="sad">😤</icon>
-<icon class="sad">😠</icon>
-<icon class="sad">😡</icon>
-<icon class="confused">😶</icon>
-<icon class="confused">😐</icon>
-<icon class="confused">😑</icon>
-<icon class="surprised">😯</icon>
-<icon class="surprised">😦</icon>
-<icon class="surprised">😧</icon>
-<icon class="surprised">😮</icon>
-<icon class="surprised confused">😲</icon>
-<icon class="surprised confused">😵</icon>
-<icon class="surpised confused">😳</icon>
-<icon class="surpised confused">😱</icon>
-<icon class="sad surprised confused">😨</icon>
-<icon class="sad confused">😰</icon>
-<icon class="sad confused">😢</icon>
-<icon class="sad confused">😥</icon>
+<span class="happy">😀</span>
+<span class="happy excited">😃</span>
+<span class="happy excited">😄</span>
+<span class="happy excited">😆</span>
+<span class="happy excited">😂</span>
+<span class="happy">😊</span>
+<span class="happy">😇</span>
+<span class="happy">😌</span>
+<span class="happy excited">😍</span>
+<span class="happy">😗</span>
+<span class="happy">😙</span>
+<span class="happy">😚</span>
+<span class="happy excited">😋</span>
+<span class="confused excited">😜</span>
+<span class="confused excited">😝</span>
+<span class="confused excited">😛</span>
+<span class="sad">😒</span>
+<span class="sad">😞</span>
+<span class="sad">😔</span>
+<span class="sad">😟</span>
+<span class="sad">😕</span>
+<span class="confused">😖</span>
+<span class="sad">😫</span>
+<span class="sad">😩</span>
+<span class="sad">😤</span>
+<span class="sad">😠</span>
+<span class="sad">😡</span>
+<span class="confused">😶</span>
+<span class="confused">😐</span>
+<span class="confused">😑</span>
+<span class="surprised">😯</span>
+<span class="surprised">😦</span>
+<span class="surprised">😧</span>
+<span class="surprised">😮</span>
+<span class="surprised confused">😲</span>
+<span class="surprised confused">😵</span>
+<span class="surpised confused">😳</span>
+<span class="surpised confused">😱</span>
+<span class="sad surprised confused">😨</span>
+<span class="sad confused">😰</span>
+<span class="sad confused">😢</span>
+<span class="sad confused">😥</span>
 
 <hr>
 
-<center>Made by Nathan Allen</center>
+Made by Nathan Allen
 
 <script>
-  icons = document.querySelectorAll("icon")
+  spans = document.querySelectorAll("span")
   function search(tag){
-    for(icon of icons){
-      isMatch = icon.className.match(tag)
-      icon.setAttribute("style", isMatch || "display:none")
+    for(span of spans){
+      isMatch = span.className.match(tag)
+      span.setAttribute("style", isMatch || "display:none")
     }
   }
 </script>
