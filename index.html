@@ -5,12 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Emoji Finder</title>
   <style type="text/css">
-    .hidden {
-      display: none;
+    body {
+      max-width: 800px;
+      margin: 0 auto;
     }
-    input {
-      font-size: 2em;
+
+    button {
+      font-size: 1.25em;
+      margin: 2px;
+      padding: .25em;
+      width: 32%;
+      border-radius: 10px;
+      background-color: white;
       cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      button {
+        margin: 0;
+        width: 100%;
+      }
     }
 
     icon {
@@ -18,16 +32,21 @@
       font-size: 5em;
       transition: display 3s ease;
     }
+
+    h2 {
+      text-align: center;
+    }
   </style>
 </head>
 <body>
+<h2>Emoji Finder</h2>
 
-<input type="button" value="all" onclick="search('')">
-<input type="button" value="confused" onclick="search(this.value)">
-<input type="button" value="surprised" onclick="search(this.value)">
-<input type="button" value="excited"  onclick="search(this.value)">
-<input type="button" value="happy"    onclick="search(this.value)">
-<input type="button" value="sad"    onclick="search(this.value)">
+<button onclick="search('')">all</button>
+<button onclick="search(this.innerText)">happy</button>
+<button onclick="search(this.innerText)">sad</button>
+<button onclick="search(this.innerText)">excited</button>
+<button onclick="search(this.innerText)">confused</button>
+<button onclick="search(this.innerText)">surprised</button>
 
 <p>Showing results for: "<span class="choice"></span>"</p>
 
