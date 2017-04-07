@@ -8,32 +8,19 @@
     body {
       max-width: 800px;
       margin: 0 auto;
+      font-size: 24px;
+      text-align: center;
     }
 
-    button {
-      font-size: 1.25em;
-      margin: 2px;
-      padding: .25em;
-      width: 32%;
-      border-radius: 10px;
-      background-color: white;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      button {
-        margin: 0;
-        width: 100%;
-      }
+    select {
+      display: inline;
+      font-size: 24px;
     }
 
     icon {
       display: inline;
-      font-size: 5em;
+      font-size: 96px;
       transition: display 3s ease;
-    }
-
-    h2 {
       text-align: center;
     }
   </style>
@@ -41,14 +28,15 @@
 <body>
 <h2>Emoji Finder</h2>
 
-<button onclick="search('')">all</button>
-<button onclick="search(this.innerText)">happy</button>
-<button onclick="search(this.innerText)">sad</button>
-<button onclick="search(this.innerText)">excited</button>
-<button onclick="search(this.innerText)">confused</button>
-<button onclick="search(this.innerText)">surprised</button>
-
-<p>Showing results for: "<span class="choice"></span>"</p>
+Find me emoji that are...
+<select onchange="search(this.value)">
+  <option></option>
+  <option>happy</option>
+  <option>sad</option>
+  <option>excited</option>
+  <option>confused</option>
+  <option>surprised</option>
+</select>
 
 <hr>
 
@@ -101,9 +89,7 @@
 
 <script>
   icons = document.querySelectorAll("icon")
-  choice = document.querySelector(".choice")
   function search(tag){
-    choice.innerText = tag
     for(icon of icons){
       isMatch = icon.className.match(tag)
       icon.setAttribute("style", isMatch || "display:none")
